@@ -100,14 +100,32 @@
 
 #footer-nav ul, #footer-nav li { margin: 0; padding: 0; list-style: none; }
 #footer-nav li { float: left; padding-right: 6px; line-height: 1; }
-.gotop_btn {
+a.gotop_btn {
 position: fixed;
 left: 50%;
-margin-left: 478px;
+margin-left: 500;
 top: 400px;
 font-weight:700;
 font-size:11px;
-width: 22px;
-height: 71px;
+width: 35px;
 display: none;
+border-radius:10px 10px 3px 3px;
+-webkit-border-radius:10px 10px 3px 3px;
+-khtml-border-radius:10px 10px 3px 3px;
+-moz-border-radius:10px 10px 3px 3px;
+background: #576d74;
+padding: 10px 0 8px 0;
+line-height: 15px;
+color: #999;
+}
+
+a.gotop_btn:hover
+{
+	background: #356d74;
+	text-decoration: none;
+}
+
+a.gotop_btn:visited
+{
+	color: #999;
 }

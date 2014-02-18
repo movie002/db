@@ -22,10 +22,10 @@ background:url(../images/bg.png);
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
 color:#2a2a2a;
-width:930px;
+width:935px;
 border:1px solid #ddd;
 margin:10px auto;
-padding:10px 15px;
+padding:10px;
 z-index:1;
 overflow:hidden;
 }
@@ -88,7 +88,7 @@ padding:3px;
 
 #sidebar {
 float:right;
-width:250px;
+width:255px;
 margin:10px 0 0;
 padding:0;
 }

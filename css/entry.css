@@ -74,7 +74,7 @@ padding:0!important;
 }
 
 .entry h3 {
-	margin:10px 0 5px 0;
+	margin:20px 0 5px 0;
 	font-size:14px;
     font-weight: 700;
 	position:relative;
@@ -318,7 +318,5 @@ padding:0
 }
 .downloadlist
 {
-	position:relative;
-	font-weight:700;
 	margin-top:10px;
 }

@@ -69,9 +69,6 @@
 }
 .sidebar_title a {
 	padding-right: 12px;
-	background-image: url(../images/new_window_8x8.png);
-	background-repeat: no-repeat;
-	background-position: 100% 50%;
 }  
 .sidebar_content  {
 	position:relative;

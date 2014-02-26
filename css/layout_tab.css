@@ -32,10 +32,10 @@
 	-moz-transition:all .5s ease;
 }
   
-#topic-list {
+.topic-list {
 }
     
-#topics-wrapper {
+.topics-wrapper {
     padding: 0;
     border-left: 1px solid #bbb;
     border-right: 1px solid #bbb;
@@ -129,11 +129,15 @@ padding: 0px;
 .TabTitle ul li
 {	
 	border:none;
+	cursor:pointer;
 	float:left;
 	margin:0 10px 0 0;
 	padding:0 5px;
 }
-
+.TabTitle ul li:hover
+{	
+	cursor:pointer;
+}
 .TabTitle .active
 {
 	background:#52686f;

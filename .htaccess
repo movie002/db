@@ -52,13 +52,15 @@ Options +FollowSymLinks
 RewriteEngine On
 #RewriteCond %{HTTP_HOST} ^www.movie002.com$ [NC]
 #RewriteRule ^(.*)$ http://movie002.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^movie002.com$ [NC]
+RewriteRule ^(.*)$ http://www.movie002.com/$1 [L,R=301]
 
-RewriteCond %{HTTP_HOST} ^199.180.255.28$ [NC]
-RewriteRule ^(.*)$ http://movie002.com/$1 [R=301,L]
+#RewriteCond %{HTTP_HOST} ^199.180.255.28$ [NC]
+#RewriteRule ^(.*)$ http://movie002.com/$1 [R=301,L]
 
 ##防止别人的域名解析到你的IP
 #RewriteCond %{HTTP_HOST} !(^movie002.com$) [NC]
-#RewriteRule ^(.*)$ http://movie002.com/$1 [R=301,L]
+#RewriteRule ^(.*)$ http://www.movie002.com/$1 [R=301,L]
 
 ##示例: 0/49/4910.html-->0/49/10.html
 ##%{HTTP_HOST}符合条件

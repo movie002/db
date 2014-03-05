@@ -97,7 +97,8 @@
 
 #footer-nav ul, #footer-nav li { margin: 0; padding: 0; list-style: none; }
 #footer-nav li { float: left; padding-right: 6px; line-height: 1; }
-a.gotop_btn {
+a.gotop_btn ,a.gocom_btn
+{
 position: fixed;
 left: 50%;
 margin-left: 500px;
@@ -116,13 +117,22 @@ line-height: 15px;
 color: #999;
 }
 
-a.gotop_btn:hover
+a.gotop_btn:hover,a.gocom_btn:hover
 {
 	background: #356d74;
 	text-decoration: none;
 }
 
-a.gotop_btn:visited
+a.gotop_btn:visited,a.gocom_btn:visited
 {
 	color: #999;
+}
+a.gocom_btn {
+text-align:center;
+top: 360px;
+display: block;
+border-radius:3px3px 10px 10px;
+-webkit-border-radius:3px3px 10px 10px;
+-khtml-border-radius:3px3px 10px 10px;
+-moz-border-radius:3px3px 10px 10px;
 }

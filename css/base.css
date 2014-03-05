@@ -220,6 +220,16 @@ a:active {
 	font-size:14px;
 }
 
+.f500
+{
+	font-weight:normal;
+}
+
+.f700
+{
+	font-weight:700;
+}
+
 .line1
 {
 	overflow:hidden;

@@ -310,6 +310,8 @@ padding: 0px;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
+	border-bottom:1px solid #999;
+	width:90%;
 }
 
 .imglist2

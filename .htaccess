@@ -2,6 +2,11 @@ DirectoryIndex index.html index.htm index.php
 
 ErrorDocument 404 /404.html
 
+#对目录设置访问权限
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
 #以避免目录列表
 Options -Indexes
 
@@ -25,7 +30,7 @@ allow from all
 #Redirect?301?/old/file.html?http://yourdomain.com/new/file.html??
 #RedirectMatch 301 /blog(.*) http://yourdomain.com/$1
 
-
+#压缩
 <ifmodule mod_deflate.c>
 SetOutputFilter DEFLATE
 #DeflateCompressionLevel 9
@@ -54,6 +59,10 @@ RewriteEngine On
 #RewriteRule ^(.*)$ http://movie002.com/$1 [L,R=301]
 RewriteCond %{HTTP_HOST} ^movie002.com$ [NC]
 RewriteRule ^(.*)$ http://db.movie002.com/$1 [L,R=301]
+
+#防止.svn被访问
+RewriteBase /
+RewriteRule ^.svn/.*  ./404.html
 
 #RewriteCond %{HTTP_HOST} ^199.180.255.28$ [NC]
 #RewriteRule ^(.*)$ http://movie002.com/$1 [R=301,L]

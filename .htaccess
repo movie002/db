@@ -1,4 +1,4 @@
-DirectoryIndex index.html index.htm index.php
+DirectoryIndex index.html
 
 ErrorDocument 404 /404.html
 

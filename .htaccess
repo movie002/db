@@ -67,6 +67,9 @@ RewriteRule ^(.*)$ http://db.movie002.com/$1 [L,R=301]
 RewriteBase /
 RewriteRule ^.svn/.*  ./404.html
 
+RewriteBase /
+RewriteRule ^.*/.svn/.*  ./404.html
+
 #发现服务器启用了TRACE Method
 RewriteCond %{REQUEST_METHOD} ^TRACE
 RewriteRule .* - [F]

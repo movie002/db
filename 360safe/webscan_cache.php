@@ -1,6 +1,6 @@
 <?php
 //用户唯一key
-define('WEBSCAN_U_KEY', '694832644416a404ec222bdb46c61afe');
+define('WEBSCAN_U_KEY', 'd8ea7dac97e555e72fb8130d28c655b8');
 //数据回调统计地址
 define('WEBSCAN_API_LOG', 'http://safe.webscan.360.cn/papi/log/?key='.WEBSCAN_U_KEY);
 //版本更新地址

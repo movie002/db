@@ -80,7 +80,7 @@ function dh_say()
 	global $dh_say_content;
 	//print_r($dh_say_content);
 	$thiscontent = $dh_say_content[ mt_rand(0, count($dh_say_content) - 1) ];
-	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px"><span style="float:left"><a href="http://v.movie002.com/" target="_blank">资源导航启动域名v.movie002.com,作为影视资源导航</a></span><span style="float:right;">'.$thiscontent.'</span></body></html>';
+	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px"><span style="float:left"><a href="http://v.movie002.com/" target="_blank">资源导航界面改变，利用表格展示美观!</a></span><span style="float:right;">'.$thiscontent.'</span></body></html>';
 	return $ret;
 }
 ?>

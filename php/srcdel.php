@@ -18,7 +18,8 @@ function srcdel()
 	print_r($_POST);
 	$delurl=$_POST['delurl'];
 	$pageid = $_POST['pageid'];
-	$sql="delete from link where link='$delurl' and pageid=$pageid;";
+	$passwd = $_POST['passwd'];
+	$sql="update link set remove = '$passwd' where link='$delurl' and pageid=$pageid;";
 	echo $sql;
 	if(dh_mysql_query($sql)==null)
 	{

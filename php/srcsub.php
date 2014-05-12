@@ -11,9 +11,11 @@ $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 	
-srcdel();	
+//定义能删除的权限列表
+$auth = array('','','');
+srcsub();	
 	
-function srcdel()
+function srcsub()
 {	
 	if (!isset($_POST['email']))
 	{
@@ -22,6 +24,11 @@ function srcdel()
 	}
 
 	print_r($_POST); 
+	if(checkpasswd($passwd,$pageid)===-1)
+	{
+		echo "删除码不对!";
+		return;
+	}
 
 	if(empty($_POST['email']))
 	{
@@ -47,5 +54,24 @@ function srcdel()
 	echo '增加成功!刷新查看';
 	//调用genpage重新生成页面
 	get_file_curl("http://127.0.0.1/php/genv/gen_page.php?id=$pageid");
+}
+function checkpasswd($passwd)
+{
+	global $auth;
+	//print_r($auth);
+	
+	$res1=array_search($passwd,$auth);
+	//echo 'res1: '.$res1."\n";
+	if ($res1===false)
+	{
+		//echo "bad passwd \n";
+		return -1;
+	}
+	else
+	{
+		//echo "good passwd \n";
+		return 1;
+	}	
+	return -1;
 }
 ?>

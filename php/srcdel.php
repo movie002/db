@@ -23,7 +23,7 @@ function srcdel()
 	$pageid = $_POST['pageid'];
 	$passwd = $_POST['passwd'];
 	
-	if(checkpasswd($passwd,$pageid)===-1)
+	if(checkpasswd($passwd,$pageid,$delurl)===-1)
 	{
 		echo "删除码不对!";
 		return;
@@ -40,28 +40,28 @@ function srcdel()
 	get_file_curl("http://127.0.0.1/php/genv/gen_page.php?id=$pageid");
 }
 
-function checkpasswd($passwd,$pageid)
+function checkpasswd($passwd,$pageid,$delurl)
 {
 	global $auth;
 	//print_r($auth);
 	
-	$res1=array_search($passwd,$auth['bigboss']);
-	//echo 'res1: '.$res1."\n";
-	if ($res1===false)
-	{
-		//echo "not bigboss \n";	
-		$res2=array_search($passwd,$auth[$pageid]);
-		//echo 'res2: '.$res2."\n";
-		if ($res2===false)
-		{
-			//echo "not others \n";
-		}
-		else
-		{
-			//echo "good passwd \n";
-			return 1;
-		}	
-	}
+	if($passwd=='' || $passwd=='0')
+		return -1;
+	
+	$res=array_search($passwd,$auth['bigboss']);
+	if (!($res===false))
+		return 1;
+		
+	$res=array_search($passwd,$auth[$pageid]);	
+	if (!($res===false))
+		return 1;
+	
+	$sql="select count(*) from link where input = '$passwd' and link='$delurl' and pageid=$pageid;";
+	//echo $sql;
+	$row = dh_mysql_query($sql);
+	$count = mysql_fetch_array($row);
+	if($count[0]>=1)
+		return 1;
 	return -1;
 }
 ?>

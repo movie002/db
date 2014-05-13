@@ -11,42 +11,33 @@ $conn=mysql_connect ($dbip, $dbuser, $dbpasswd) or die('数据库服务器连接
 mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 	
-//定义能删除的权限列表
-$auth = array('','','');
 srcsub();	
 	
 function srcsub()
 {	
-	if (!isset($_POST['email']))
+	print_r($_POST);
+	
+	if (!isset($_POST['title'])||!isset($_POST['link'])||!isset($_POST['linktype']))
 	{
 		echo '参数未设置!';
 		return;
 	}
 
-	print_r($_POST); 
-	if(checkpasswd($passwd,$pageid)===-1)
-	{
-		echo "删除码不对!";
-		return;
-	}
-
-	if(empty($_POST['email']))
-	{
-		echo '未设置邮件';
-		return;
-	}
-
-	$email=$_POST['email'];
-	$id = $_POST['id'];
+	$passwd = $_POST['passwd'];
 	
-	
-	$updatetime = date("Y-m-d H:i:s");
-	$sql="insert into link(pageid,email,updatetime,type) values ($id,'$email','$updatetime',1) ON DUPLICATE KEY UPDATE updatetime='$updatetime';";
-	if(dh_mysql_query($sql)==null)
+	if(checkpasswd($passwd)===-1)
 	{
-		echo '订阅失败！';
+		echo "授权码不对!";
 		return;
 	}
+	
+	return;
+	$updatetime = $_POST['updatetime'];
+	if($updatetime=='')
+		$updatetime = date("Y-m-d H:i:s");
+	
+	addorupdatelink($_POST['id'],$_POST['author'],$_POST['titie'],$_POST['link'],'',$_POST['linkquality'],$_POST['linkway'],$_POST['linktype'],$_POST['linkdownway'],$updatetime,$passwd);
+	
 	//$sql='insert into pagetmp(id,email,updatetime);'
 	//dh_query($sql);
 		
@@ -57,7 +48,8 @@ function srcsub()
 }
 function checkpasswd($passwd)
 {
-	global $auth;
+	//定义能删除的权限列表
+	$auth = array('111111','dhblog','123456');
 	//print_r($auth);
 	
 	$res1=array_search($passwd,$auth);

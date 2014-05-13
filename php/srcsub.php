@@ -15,36 +15,29 @@ srcsub();
 	
 function srcsub()
 {	
-	print_r($_POST);
+	//print_r($_POST);
 	
-	if (!isset($_POST['title'])||!isset($_POST['link'])||!isset($_POST['linktype']))
+	if (empty($_POST['title'])||empty($_POST['link'])||empty($_POST['author'])||empty($_POST['passwd']))
 	{
 		echo '参数未设置!';
 		return;
 	}
 
-	$passwd = $_POST['passwd'];
-	
-	if(checkpasswd($passwd)===-1)
+	if(checkpasswd($_POST['passwd'])===-1)
 	{
 		echo "授权码不对!";
 		return;
 	}
 	
-	return;
 	$updatetime = $_POST['updatetime'];
-	if($updatetime=='')
+	if(empty($updatetime))
 		$updatetime = date("Y-m-d H:i:s");
-	
-	addorupdatelink($_POST['id'],$_POST['author'],$_POST['titie'],$_POST['link'],'',$_POST['linkquality'],$_POST['linkway'],$_POST['linktype'],$_POST['linkdownway'],$updatetime,$passwd);
-	
-	//$sql='insert into pagetmp(id,email,updatetime);'
-	//dh_query($sql);
 		
+	addorupdatelink($_POST['id'],$_POST['author'],$_POST['title'],$_POST['link'],'',$_POST['linkquality'],$_POST['linkway'],$_POST['linktype'],$_POST['linkdownway'],$updatetime,$_POST['passwd']);
 		
-	echo '增加成功!刷新查看';
 	//调用genpage重新生成页面
-	get_file_curl("http://127.0.0.1/php/genv/gen_page.php?id=$pageid");
+	get_file_curl("http://127.0.0.1/php/genv/gen_page.php?id=".$_POST['id']);
+	echo '增加成功!刷新查看';	
 }
 function checkpasswd($passwd)
 {

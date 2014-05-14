@@ -51,11 +51,14 @@ function checkpasswd($passwd,$pageid,$delurl)
 	$res=array_search($passwd,$auth['bigboss']);
 	if (!($res===false))
 		return 1;
-		
-	$res=array_search($passwd,$auth[$pageid]);	
-	if (!($res===false))
-		return 1;
 	
+	if(array_key_exists($pageid,$auth))
+	{
+		$res=array_search($passwd,$auth[$pageid]);	
+		if (!($res===false))
+			return 1;
+	}
+
 	$sql="select count(*) from link where input = '$passwd' and link='$delurl' and pageid=$pageid;";
 	//echo $sql;
 	$row = dh_mysql_query($sql);

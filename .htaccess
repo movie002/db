@@ -10,6 +10,10 @@ ErrorDocument 404 /404.html
 #以避免目录列表
 Options -Indexes
 
+#发现服务器启用了TRACE Method
+RewriteCond %{REQUEST_METHOD} ^TRACE
+RewriteRule .* - [F]
+
 #更改字符集和语言的头文件
 AddDefaultCharset UTF-8
 DefaultLanguage zh-CN

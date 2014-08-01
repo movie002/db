@@ -32,7 +32,7 @@ mysql_select_db($dbname, $conn) or die('选择数据库失败');
 mysql_query("set names utf8;");
 
 //定义能删除的权限列表
-$auth = array('bigboss'=>array('bigboss'),'10091'=>array('123456','klkl'));
+$auth = array('bigboss'=>array('bigboss'),'10282'=>array('myipr'));
 
 srcdel();
 

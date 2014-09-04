@@ -80,7 +80,7 @@ function dh_say()
 	global $dh_say_content;
 	//print_r($dh_say_content);
 	$thiscontent = $dh_say_content[ mt_rand(0, count($dh_say_content) - 1) ];
-	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;"><a style="color:chocolate" href="http://v.movie002.com/" target="_blank">20140619愿您来过一下，下次还会再来！</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
+	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;"><a style="color:chocolate" href="http://v.movie002.com/" target="_blank">“二手电影网” 更名为“电影小二网”，侧重做服务大家的小二！域名不变！ (20140619)</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
 	return $ret;
 }
 ?>

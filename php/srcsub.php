@@ -53,7 +53,7 @@ function srcsub()
 	if(empty($updatetime))
 		$updatetime = date("Y-m-d H:i:s");
 		
-	addorupdatelink($_POST['id'],$_POST['author'],$_POST['title'],$_POST['link'],'',$_POST['linkquality'],$_POST['linkway'],$_POST['linktype'],$_POST['linkdownway'],$updatetime,$_POST['passwd']);
+	addorupdatelink($_POST['id'],$_POST['author'],$_POST['title'],$_POST['link'],'',$_POST['linkquality'],$_POST['linkway'],$_POST['linktype'],$_POST['linkdownway'],0,$updatetime,$_POST['passwd']);
 		
 	//调用genpage重新生成页面
 	get_file_curl("http://127.0.0.1/php/genv/gen_page.php?id=".$_POST['id']);

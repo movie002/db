@@ -81,7 +81,7 @@ function dh_say()
 	global $dh_say_content;
 	//print_r($dh_say_content);
 	$thiscontent = $dh_say_content[ mt_rand(0, count($dh_say_content) - 1) ];
-	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;"><a style="color:chocolate" href="http://v.movie002.com/" target="_blank">“祝大家新年快乐，过一个快乐的2015年！</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
+	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;"><a style="color:chocolate" href="http://v.movie002.com/" target="_blank">“误操作后中断24小时陆续恢复,请谅解！</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
 	return $ret;
 }
 ?>

@@ -24,6 +24,7 @@ header('Content-Type:text/html;charset= UTF-8');
 require_once('../360safe/360webscan.php');
 require_once("../../php/common/base.php");
 require_once("../../php/config.php");
+require_once("../../php/genv/config.php");
 require_once("../../php/common/dbaction.php");
 require_once("../../php/common/curl.php");
 

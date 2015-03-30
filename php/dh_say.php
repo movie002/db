@@ -68,6 +68,7 @@ $dh_say_content=array(
 	'学着做你自己，并优雅地放手所有不属于你的东西。',
 	'不要去欺骗别人，因为你能骗到的人，都是相信你的人！',
 	'人生最可怕的事情，就是比你聪明的人还比你勤奋。',
+	'当你感到失落，无聊，无趣时，来这里看看 :-)',
 	'“勤奋”是穷人通向成功最便捷的路。'
 );
 
@@ -80,7 +81,7 @@ function dh_say()
 	global $dh_say_content;
 	//print_r($dh_say_content);
 	$thiscontent = $dh_say_content[ mt_rand(0, count($dh_say_content) - 1) ];
-	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px"><span style="float:left"><a href="http://v.movie002.com/" target="_blank">资源导航启动域名v.movie002.com,作为影视资源导航</a></span><span style="float:right;">'.$thiscontent.'</span></body></html>';
+	$ret = '<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body leftmargin="0" topmargin="0" style="background-color:transparent;font-size:12px;}"><span style="float:left;"><a style="color:chocolate" href="http://v.movie002.com/" target="_blank">“误操作后中断24小时陆续恢复,请谅解！(20150321)</a></span><span style="float:right;color:chocolate;">'.$thiscontent.'</span></body></html>';
 	return $ret;
 }
 ?>
